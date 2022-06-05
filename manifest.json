@@ -1,9 +1,9 @@
 {
   "manifest_version": 2,
-  "name": "Rewritify",
+  "name": "Rewrite Amazon Music",
   "version": "1.0",
 
-  "description": "Replace text across all websites using regular expressions. It's like find and replace for the entire internet!",
+  "description": "Replace Amazon Music links in search results by the product link",
 
   "icons": {
     "48": "icons/ic_find_replace_black_48dp_1x.png",
@@ -12,14 +12,9 @@
 
   "content_scripts": [
     {
-      "matches": ["*://*/*"],
+      "matches": ["https://*.amazon.com/s*", "https://*.amazon.de/s*"],
       "js": ["rewrite.js"]
     }
-  ],
+  ]
 
-  "options_ui": {
-    "page": "options.html"
-  },
-
-  "permissions": ["storage"]
 }
